@@ -11,7 +11,7 @@ class BookController extends Controller
     {
         // dal db prendiamo la lista dei libri
         // $books = Book::all();
-        $books = Book::paginate(); // default 15 per pagina
+        $books = Book::select(['title', 'price'])->paginate(4); // default 15 per pagina
         // dd($books);
         // dump($books);
         // ddd($books);

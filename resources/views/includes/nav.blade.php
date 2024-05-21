@@ -21,7 +21,35 @@
                     <a class="nav-link" href="{{ route('about') }}">About us</a>
                 </li>
             </ul>
-
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            @auth
+            <li class="nav-item">
+                <a
+                    href="{{ url('dashboard') }}"
+                    class="nav-link"
+                >
+                    Dashboard
+                </a>
+            </li>
+            @else
+            <li class="nav-item">
+                <a
+                    href="{{ route('login') }}"
+                    class="nav-link"
+                >
+                    Log in
+                </a>
+            </li>
+            <li class="nav-item">
+                    <a
+                        href="{{ route('register') }}"
+                        class="nav-link"
+                    >
+                        Register
+                    </a>
+                </li>
+            @endauth
+            </ul>
             <form class="d-flex" role="search">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
